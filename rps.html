@@ -1,0 +1,67 @@
+<html>
+<head>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel = "stylesheet" type = "text/css" href = "animate.css">
+        <link rel = "stylesheet" type = "text/css" href = "rps.css">
+    </head>
+    
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        
+        <div>
+            <button id = "rock" onclick="rps('rock')">Rock</button>
+            <button id = "paper" onclick="rps('paper')">Paper</button>
+            <button id = "scissors" onclick="rps('scissors')">Scissors</button>
+        </div>
+        
+        <p id = "message">
+        </p>
+        
+        
+   
+<script>
+        
+function rps(item){
+            var random = Math.floor(Math.random() * 3);
+            var randomItem;
+            
+            if(random === 0){
+                randomItem = 'rock';
+            }else if(random === 1){
+                randomItem = 'paper';
+            }else{
+                randomItem = 'scissors'
+            }
+            
+            if(item === randomItem){
+                document.getElementById('message').innerHTML = 'tie'
+            }else if(randomItem = 'rock'){
+                if(item === 'paper'){
+                    document.getElementById('message').innerHTML = 'paper beats rock, you win!'
+                }else{
+                    document.getElementById('message').innerHTML = 'rock beats scissors, you lose.'
+                }
+            }else if (randomItem = 'paper'){
+               //check if your item === rock
+               //check if your item === scissors 
+            }else{
+                //check if your item === rock
+                //check if your item === paper
+            }
+            
+        }
+
+        function animate(element,name){
+            document.getElementById(element).classList.toggle(name);
+            document.getElementById(element).classList.toggle('animated');
+            setTimeout(function(){
+             document.getElementById(element).classlist.toggle(name);
+             document.getElementById(element).classList.toggle('animated');
+            },1000)
+        }
+    
+    </script>
+        
+        
+</body>
+</html>  
